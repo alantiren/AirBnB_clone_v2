@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Define the remote user and hosts
 env.user = 'ubuntu'
-env.hosts = ['<IP web-01>', '<IP web-02>']
+env.hosts = ['52.3.241.14', '34.224.4.0']
 
 def do_pack():
     """
