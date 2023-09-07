@@ -18,9 +18,7 @@ def do_clean(number=0):
     try:
         number = int(number)
         keep = number if number >= 2 else 1
-
         local("ls -t versions | tail -n +{} | xargs -I {{}} rm versions/{{}}".format(keep + 1))
-
         releases_path = '/data/web_static/releases'
         releases = run("ls -t {}".format(releases_path)).split()
         if len(releases) > keep:
