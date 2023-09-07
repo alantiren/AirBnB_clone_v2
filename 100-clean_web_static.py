@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""
-Fabric script to delete out-of-date archives
-"""
-
+# Fabric script to delete out-of-date archives
 from fabric.api import local, env, run
 from os.path import exists, join
 from datetime import datetime
 from pathlib import Path
 
-# Define the remote user and hosts
 env.user = 'ubuntu'
 env.hosts = ['52.3.241.14', '34.224.4.0']
+
 
 def do_clean(number=0):
     """
@@ -23,10 +20,8 @@ def do_clean(number=0):
         number = int(number)
         keep = number if number >= 2 else 1
 
-        # Clean the local versions folder
         local("ls -t versions | tail -n +{} | xargs -I {{}} rm versions/{{}}".format(keep + 1))
 
-        # Clean the remote versions folder on both servers
         releases_path = '/data/web_static/releases'
         releases = run("ls -t {}".format(releases_path)).split()
         if len(releases) > keep:
