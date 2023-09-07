@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # Fabric script to distribute an archive to web servers
-from fabric.api import local, env, put, run
-from datetime import datetime
-import os
+import os.path
+from fabric.api import env
+from fabric.api import put
+from fabric.api import run
 
 env.hosts = ["52.3.241.14", "34.224.4.0"]
 
