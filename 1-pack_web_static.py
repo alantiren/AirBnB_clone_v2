@@ -12,6 +12,7 @@ def do_pack():
     """
     if not os.path.exists("versions"):
         os.makedirs("versions")
+    now = datetime.now()
     archive_name = "web_static_{}.tgz".format(
         now.strftime("%Y%m%d%H%M%S"))
     archive_command = "tar -cvzf versions/{} web_static".format(archive_name)
@@ -20,5 +21,6 @@ def do_pack():
         return "versions/{}".format(archive_name)
     else:
         return None
+
 if __name__ == "__main__":
     do_pack()
