@@ -15,7 +15,6 @@ def do_clean(number=0):
     """
     if int(number) < 0:
         return
-
     try:
         number = int(number)
         keep = number if number >= 2 else 1
@@ -27,7 +26,6 @@ def do_clean(number=0):
         if len(releases) > keep:
             for release in releases[keep:]:
                 run("rm -rf {}/{}".format(releases_path, release))
-
         print("Done.")
     except Exception as e:
         pass
