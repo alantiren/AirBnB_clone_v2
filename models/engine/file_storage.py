@@ -75,6 +75,6 @@ class FileStorage:
             del self.__objects[key]
 
     def close(self):
-        """ calls reload()
+        """ Close the current session and reload data from the JSON file()
         """
         self.reload()

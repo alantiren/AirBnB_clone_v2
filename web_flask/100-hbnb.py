@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
-
-The application listens on 0.0.0.0, port 5000.
-Routes:
-    /hbnb: HBnB home page.
+"""Start a Flask web application for HBNB project
 """
 from models import storage
 from flask import Flask
@@ -24,7 +20,7 @@ def hbnb():
 
 @app.teardown_appcontext
 def teardown(exc):
-    """Remove the current SQLAlchemy session."""
+    """Close the database session."""
     storage.close()
 
 
