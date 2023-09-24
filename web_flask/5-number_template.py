@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script starts a Flask web application with multiple routes and a number template.
+This script starts a Flask web application with multiple routes
+and a number template.
 """
 from flask import Flask
 from flask import render_template
